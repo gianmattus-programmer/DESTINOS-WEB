@@ -1,0 +1,293 @@
+/* Importación de fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Reinicio de estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Estilos del encabezado */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 5%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+}
+
+/* Estilos del logo */
+.logo {
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* Estilos de la sección de redes sociales */
+.social-media {
+    margin: 0 auto 0 50px; 
+}
+
+/* Estilos de los iconos de redes sociales */
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: .5s;
+}
+
+/* Efecto hover en iconos de redes sociales */
+.social-media a:hover {
+    background: white;
+}
+
+.social-media a i {
+    font-size: 20px;
+    color: white;
+    transition: .5s;
+}
+
+.social-media a:hover i {
+    color: #444;
+}
+
+/* Estilos de la barra de navegación */
+.navbar a {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 30px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos del banner principal */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Estilos del slider */
+.slider .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilos de las imágenes del slider */
+.slide img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    opacity: 0;
+    transition: .3s ease;
+}
+
+/* Imagen activa del slider */
+.slide.active img {
+    opacity: 1;
+}
+
+/* Estilos de la información izquierda del slide */
+.slide .left-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    transform: translateX(-100%);
+    transition: 0s;
+}
+
+.slide.active .left-info {
+    transform: translateX(0);
+    z-index: 1;
+    transition: .5s ease;  
+}
+
+/* Efecto de desenfoque penetrante */
+.left-info .penetrate-blur {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, .1);
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    -webkit-mask: linear-gradient(#000 0 0),
+    linear-gradient(#000 0 0);
+    -webkit-mask-clip: text, padding-box;
+    -webkit-mask-composite: xor;
+    padding-right: 20px;
+}
+
+/* Título principal en el área desenfocada */
+.penetrate-blur h1 {
+    font-size: 250px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, .8);
+}
+
+/* Ajustes específicos para slides particulares */
+.slide:nth-child(1) .penetrate-blur h1,
+.slide:nth-child(4) .penetrate-blur h1 {
+    margin-right: -10px;  
+}
+
+/* Contenido informativo en la parte izquierda */
+.left-info .content {
+    position: absolute;
+    bottom: 8%;
+    left: 10%;
+    color: white;
+}
+
+.content h3 {
+    font-size: 20px;
+}
+
+.content p {
+    font-size: 16px;
+    margin: 10px 0 15px;
+}
+
+/* Estilos del botón */
+.content .btn {
+    display: inline-block;
+    padding: 13px 28px;
+    background: white;
+    color: #444;
+    border: 2px solid white;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .5s;
+}
+
+/* Efecto hover del botón */
+.content .btn:hover {
+    background: transparent;
+    color: white;
+}
+
+/* Estilos de la información derecha del slide */
+.slide .right-info {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transform: translateX(100%); 
+    transition: 0s;
+}
+
+.slide.active .right-info {
+    transform: translateX(0); 
+    z-index: 1;
+    transition: .5s ease;
+}
+
+/* Título principal en la parte derecha */
+.right-info h1 {
+    font-size: 250px;
+    color: white;
+    /* Efecto de texto 3D con múltiples sombras */
+    text-shadow: 
+        0 1px 0 #ccc,
+        0 2px 0 #c9c9c9,
+        0 3px 0 #bbb,
+        0 4px 0 #b9b9b9,
+        0 5px 0 #aaa,
+        0 6px 1px rgba(0, 0, 0, .1),
+        0 0 5px rgba(0, 0, 0, .1),
+        0 1px 3px rgba(0, 0, 0, .3),
+        0 3px 5px rgba(0, 0, 0, .2),
+        0 5px 10px rgba(0, 0, 0, .25),
+        0 10px 10px rgba(0, 0, 0, .2),
+        0 20px 20px rgba(0, 0, 0, .15);
+}
+
+/* Ajustes específicos para slides particulares */
+.slide:nth-child(2) .right-info h1,
+.slide:nth-child(4) .right-info h1 {
+    margin-left: 10px;  
+}
+
+/* Subtítulo en la parte derecha */
+.right-info h3 {
+    position: absolute;
+    font-size: 80px;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transform: translateY(150%);
+    margin-left: 130px;
+}
+
+/* Controles de navegación del slider */
+.navegation {
+    position: absolute;
+    bottom: 8%;
+    right: 5%;
+    z-index: 99;
+}
+
+/* Botones de navegación */
+.navegation span {
+    display: inline-flex;
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: 2px solid white;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    cursor: pointer;
+    margin-left: 25px;
+    transition: .5s;
+}
+
+/* Estilos específicos para el botón anterior */
+.navegation span:nth-child(1) {
+    background: transparent;
+}
+
+.navegation span:nth-child(1):hover {
+    background: white;
+}
+
+/* Iconos de navegación */
+.navegation span i {
+    font-size: 45px;
+    color: #444;
+    transition: .5s;
+}
+
+.navegation span:nth-child(1) i {
+    color: white;
+}
+
+.navegation span:nth-child(1):hover i {
+    color: #444;
+}
+
